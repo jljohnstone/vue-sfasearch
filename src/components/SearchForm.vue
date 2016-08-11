@@ -1,22 +1,19 @@
 <template>
-  <form @submit="requestSearch">
-    <input type="text" v-model="terms">
-    <button type="submit">Search</button>
-  </form>
-  <p><strong>Terms: {{ terms }}</strong></p>
+  <div class="search-form">
+    <form @submit.prevent="requestSearch">
+      <input type="text" v-model="terms">
+      <button type="submit">Search</button>
+    </form>
+    <p><strong>Terms: {{ terms }}</strong></p>
+  </div>
 </template>
 
 
 <script>
 export default {
-  data () {
-    return {
-      terms: 'scott'
-    }
-  },
+  props: ['terms'],
   methods: {
-    requestSearch (e) {
-      e.preventDefault()
+    requestSearch () {
       this.$dispatch('new-search', this.terms)
     }
   }
