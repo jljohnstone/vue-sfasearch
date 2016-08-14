@@ -16,7 +16,7 @@ import WebsiteResults from './components/WebsiteResults'
 export default {
   data () {
     return {
-      terms: 'smith'
+      terms: ''
     }
   },
   components: {

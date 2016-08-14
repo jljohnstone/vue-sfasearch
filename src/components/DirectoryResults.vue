@@ -1,15 +1,17 @@
 <template>
   <div class="directory-results">
     <h2>Directory Results</h2>
-    <p>People named: {{ terms }}</p>
-    <div v-show="results">
-      <ul>
-        <li v-for="person in directory.results">{{ person._source.fullname }}</li>
-      </ul>
-    </div>
-    <div v-else>
-      no results
-    </div>
+    <p>Results for: {{ terms }}</p>
+    <ul>
+      <li v-for="person in directory.results">
+        {{ person._source.fullname }}
+        <ul>
+          <li>{{ person._source.role }} - {{ person._source.department }}</li>
+          <li>phone: {{ person._source.phone }}</li>
+          <li>email: {{ person._source.email }}</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -26,7 +28,7 @@ export default {
     runSearch (terms) {
       this.terms = terms
       console.log('directory search for: ' + this.terms)
-      var searchURI = ('http://library.sfasu.edu/api/search/directory/json?q=' + this.terms)
+      var searchURI = 'http://library.sfasu.edu/api/search/directory/json?q=' + this.terms
       this.$http.jsonp(searchURI).then((response) => {
         this.$set('directory', response.json())
       }, (response) => {
