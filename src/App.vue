@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <search-form @new-search="performSearch" :terms="terms"></search-form>
     <directory-results :terms="terms"></directory-results>
     <calendar-results :terms="terms"></calendar-results>
@@ -34,6 +34,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  #app {
+    margin-top:2em;
+  }
 </style>
