@@ -1,10 +1,10 @@
 <template>
   <div class="search-form row">
-    <form @submit.prevent="requestSearch" class="col-xs-12 col-sm-8 col-lg-6">
+    <form @submit.prevent="requestSearch" class="small-12 large-6">
       <input type="text" v-model="terms">
       <button type="submit">Search</button>
     </form>
-    <p class="col-xs-12 col-sm-4 col-lg-6">
+    <p class="small-12 large-6">
       <strong>
         Terms: {{ terms }}
       </strong>

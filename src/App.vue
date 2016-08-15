@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app" class="">
     <search-form @new-search="performSearch" :terms="terms"></search-form>
     <directory-results :terms="terms"></directory-results>
     <calendar-results :terms="terms"></calendar-results>
