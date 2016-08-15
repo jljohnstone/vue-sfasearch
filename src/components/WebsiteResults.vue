@@ -26,10 +26,10 @@ export default {
   events: {
     runSearch (terms) {
       this.terms = terms
-      console.log('website search for: ' + this.terms)
       var searchURI = 'http://library.sfasu.edu/api/search/sfasu/json?q=' + this.terms
       this.$http.jsonp(searchURI).then((response) => {
         this.$set('website', response.json())
+        this.$dispatch('searchComplete', 'website')
       }, (response) => {
         console.log('error')
       })

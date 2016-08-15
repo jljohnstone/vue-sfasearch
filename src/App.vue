@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="container-fluid">
     <search-form @new-search="performSearch" :terms="terms"></search-form>
     <directory-results :terms="terms"></directory-results>
     <calendar-results :terms="terms"></calendar-results>
@@ -27,8 +27,12 @@ export default {
   },
   methods: {
     performSearch (terms) {
-      console.log('parent is telling children to search for: ' + terms)
       this.$broadcast('runSearch', terms)
+    }
+  },
+  events: {
+    searchComplete (type) {
+      console.log(type + ' search complete')
     }
   }
 }

@@ -12,7 +12,6 @@ export default {
   events: {
     runSearch (terms) {
       this.terms = terms
-      console.log('calendar search for: ' + this.terms)
     }
   }
 }
