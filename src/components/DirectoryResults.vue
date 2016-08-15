@@ -1,8 +1,8 @@
 <template>
   <div class="directory-results">
     <h2>Directory Results</h2>
-    <p>Results for: {{ terms }}</p>
-    <ul>
+    <p>{{ directory.total }} results for: {{ terms }}</p>
+    <ul v-show="directory.total">
       <li v-for="person in directory.results">
         {{ person._source.fullname }}
         <ul>

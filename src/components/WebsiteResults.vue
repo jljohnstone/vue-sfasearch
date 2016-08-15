@@ -4,7 +4,11 @@
     <p>Websites containing: {{ terms }}</p>
     <ol>
       <li v-for="entry in website.results">
-        <p><strong><a href="{{ entry._source.url }}">{{ entry._source.title }}</a></strong></p>
+        <p>
+          <strong>
+            <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
+          </strong>
+        </p>
       </li>
     </ol>
   </div>

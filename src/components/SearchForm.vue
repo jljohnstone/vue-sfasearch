@@ -4,7 +4,11 @@
       <input type="text" v-model="terms">
       <button type="submit">Search</button>
     </form>
-    <p><strong>Terms: {{ terms }}</strong></p>
+    <p>
+      <strong>
+        Terms: {{ terms }}
+      </strong>
+    </p>
   </div>
 </template>
 
