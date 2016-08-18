@@ -53,15 +53,15 @@
     methods: {
       initSlick () {
         this.$nextTick(function () {
+          console.log('initSlick')
           try {
             $('.people').slick('unslick') // remove the existing slick instance
           } catch (ex) { // when there is no existing slick instance
-          } finally {
-            $('.people').slick({
-              slidesToShow: 3,
-              slidesToScroll: 1
-            })
           }
+          $('.people').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1
+          })
         })
       }
     }

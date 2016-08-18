@@ -2,15 +2,17 @@
   <div class="website-results">
     <h2>Website Results</h2>
     <p>Websites containing: {{ terms }}</p>
-    <ol>
-      <li v-for="entry in website.results">
-        <p>
-          <strong>
-            <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
-          </strong>
-        </p>
-      </li>
-    </ol>
+      <div v-for="entry in website.results" class="website-result">
+        <div class="result-title">
+          <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
+        </div>
+        <div class="result-url">
+          {{ entry._source.url }}
+        </div>
+        <div class="result-body">
+          {{{ entry.highlight.body }}}
+        </div>
+      </div>
   </div>
 </template>
 
@@ -42,5 +44,23 @@ export default {
   @import "../assets/scss/app";
   .website-results {
     @include outer-container;
+  }
+  .website-result {
+    @include span-columns(8 of 12)
+    // margin-bottom:2em;
+    .result-title {
+      font-size:1.2rem;
+    }
+    .result-body {
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      em {
+        font-style: normal;
+      }
+    }
+    .result-url {
+      color: green;
+      font-size: 0.9rem;
+    }
   }
 </style>
