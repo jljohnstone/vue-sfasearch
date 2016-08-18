@@ -1,8 +1,8 @@
 <template>
-  <div class="directory-results">
+  <div class="directory-results" v-show="directory.total">
     <h2>People Results</h2>
     <p>{{ directory.total }} results for: {{ terms }}</p>
-    <div class="people" v-show="directory.total">
+    <div class="people">
       <div v-for="person in directory.results" class="person">
         <div class="photo">
           <img :src="person._source.image" :alt="person._source.fullname">
@@ -46,19 +46,22 @@
           this.$dispatch('searchComplete', 'directory')
           this.initSlick()
         }, (response) => {
-          console.log('error')
+          console.log('error fetching directory JSON')
         })
       }
     },
     methods: {
       initSlick () {
         this.$nextTick(function () {
-          $('.people').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1
-            // variableWidth: true
-          })
-          console.log('initSlick called')
+          try {
+            $('.people').slick('unslick') // remove the existing slick instance
+          } catch (ex) { // when there is no existing slick instance
+          } finally {
+            $('.people').slick({
+              slidesToShow: 3,
+              slidesToScroll: 1
+            })
+          }
         })
       }
     }
