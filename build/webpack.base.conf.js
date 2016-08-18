@@ -3,6 +3,9 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
+var bourbon = require('node-bourbon').includePaths
+var neat = require('node-neat').includePaths
+
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -23,6 +26,9 @@ module.exports = {
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
+  },
+  sassLoader: {
+    includePaths: [].concat(bourbon, neat)
   },
   module: {
     preLoaders: [
@@ -57,6 +63,10 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'vue-html'
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

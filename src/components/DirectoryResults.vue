@@ -1,15 +1,14 @@
 <template>
   <div class="directory-results">
-    <h2>Directory Results</h2>
+    <h2>People Results</h2>
     <p>{{ directory.total }} results for: {{ terms }}</p>
-    <div class="people row collapse" v-show="directory.total">
-      <div v-for="person in directory.results" class="person small-1 large-4">
-        <div class="row collapse">
-          <div class="photo small-4">
-            <img :src="person._source.image" :alt="person._source.fullname">
-          </div>
-          <ul class="details small-8">
-          <li>
+    <div class="people" v-show="directory.total">
+      <div v-for="person in directory.results" class="person">
+        <div class="photo">
+          <img :src="person._source.image" :alt="person._source.fullname">
+        </div>
+        <ul class="details">
+          <li class="name">
             {{ person._source.fullname }}
           </li>
           <li>
@@ -22,12 +21,10 @@
             email: {{ person._source.email }}
           </li>
         </ul>
-        </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
   import $ from 'jquery'
@@ -59,6 +56,7 @@
           $('.people').slick({
             slidesToShow: 3,
             slidesToScroll: 1
+            // variableWidth: true
           })
           console.log('initSlick called')
         })
@@ -67,7 +65,33 @@
   }
 </script>
 
-
-<style scoped lang="scss">
-
+<style lang="scss">
+  @import "../assets/scss/app";
+  .directory-results {
+    @include outer-container;
+  }
+  .people {
+    @include row();
+    .person {
+      padding: rem(10);
+      background-color: tint($gray, 20%);
+      border-right:rem(10) solid #fff;
+      .photo {
+        @include span-columns(3 of 12);
+        img {
+          @include fill-parent();
+          border:rem(2) solid #fff;
+          height:80px;
+          object-fit: cover;
+        }
+      }
+      .details {
+        @include span-columns(9 of 12);
+        font-size:rem(12);
+        .name {
+          font-size: rem(18);
+        }
+      }
+    }
+  }
 </style>

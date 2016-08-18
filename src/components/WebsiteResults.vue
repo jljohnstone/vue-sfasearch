@@ -38,6 +38,9 @@ export default {
 }
 </script>
 
-
-<style lang="scss" scoped>
+<style lang="scss">
+  @import "../assets/scss/app";
+  .website-results {
+    @include outer-container;
+  }
 </style>

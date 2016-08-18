@@ -13,6 +13,9 @@ import DirectoryResults from './components/DirectoryResults'
 import CalendarResults from './components/CalendarResults'
 import WebsiteResults from './components/WebsiteResults'
 
+// import $ from 'jquery'
+// import foundation from 'foundation-sites'
+
 export default {
   data () {
     return {
@@ -39,7 +42,13 @@ export default {
 </script>
 
 <style lang="scss">
-  #app {
-    margin-top:2em;
+  @import "./assets/scss/app";
+  body {
+    margin:0;
+    font-family: $lucida-grande;
+  }
+  a {
+    color: $purple;
+    text-decoration:none;
   }
 </style>

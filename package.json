@@ -60,6 +60,7 @@
     "lolex": "^1.4.0",
     "mocha": "^2.4.5",
     "nightwatch": "^0.8.18",
+    "node-neat": "^1.7.2",
     "node-sass": "^3.8.0",
     "ora": "^0.2.0",
     "phantomjs-prebuilt": "^2.1.3",

@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-results">
-    <h2>Calendar Results</h2>
+    <h2>Event Results</h2>
     <p>Events called: {{ terms }}</p>
   </div>
 </template>
@@ -18,6 +18,9 @@ export default {
 </script>
 
 
-<style scoped>
-
+<style lang="scss">
+  @import "../assets/scss/app";
+  .calendar-results {
+    @include outer-container;
+  }
 </style>
