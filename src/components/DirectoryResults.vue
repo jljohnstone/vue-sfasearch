@@ -1,7 +1,7 @@
 <template>
-  <div class="directory-results" v-show="directory.total">
+  <div class="directory-results" v-show="count">
     <h2>People Results</h2>
-    <p>{{ directory.total }} results for: {{ terms }}</p>
+    <p>{{ count }} results for: {{ terms }}</p>
     <div class="people">
       <div v-for="person in directory.results" class="person">
         <div class="photo">
@@ -33,36 +33,43 @@
   export default {
     data () {
       return {
-        directory: ''
+        directory: '',
+        count: 0
       }
     },
     props: ['terms'],
     events: {
       runSearch (terms) {
+        this.count = 0
         this.terms = terms
+        this.removeSlick()
         var searchURI = 'http://library.sfasu.edu/api/search/directory/json?q=' + this.terms
         this.$http.jsonp(searchURI).then((response) => {
           this.$set('directory', response.json())
           this.$dispatch('searchComplete', 'directory')
+          this.$set('count', this.directory.total)
+          // console.log('count: ' + this.count)
           this.initSlick()
         }, (response) => {
-          console.log('error fetching directory JSON')
+          console.error('error fetching directory JSON')
         })
       }
     },
     methods: {
       initSlick () {
         this.$nextTick(function () {
-          console.log('initSlick')
-          try {
-            $('.people').slick('unslick') // remove the existing slick instance
-          } catch (ex) { // when there is no existing slick instance
-          }
+          // console.log('initSlick')
           $('.people').slick({
             slidesToShow: 3,
             slidesToScroll: 1
           })
         })
+      },
+      removeSlick () {
+        try {
+          $('.people').slick('unslick') // remove the existing slick instance
+        } catch (ex) { // when there is no existing slick instance
+        }
       }
     }
   }
