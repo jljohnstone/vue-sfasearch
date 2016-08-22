@@ -4,14 +4,14 @@
       <div class="search-form">
         <form @submit.prevent="requestSearch">
           <input type="text" v-model="terms">
-          <button type="submit" class="button">Search</button>
+          <button type="submit" class="">Search</button>
         </form>
       </div>
     </div>
     <div class="terms" v-show="terms">
-      <p>
+      <h1>
         Results for <strong>{{ terms }}</strong>
-      </p>
+      </h1>
     </div>
   </div>
 </template>
@@ -47,5 +47,9 @@
   }
   .terms {
     @include outer-container;
+    h1 {
+      font-weight:normal;
+      font-size:1.3em;
+    }
   }
 </style>

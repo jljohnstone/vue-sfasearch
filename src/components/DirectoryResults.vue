@@ -1,7 +1,6 @@
 <template>
   <div class="directory-results" v-show="count">
     <h2>People Results</h2>
-    <p>{{ count }} results for: {{ terms }}</p>
     <div class="people">
       <div v-for="person in directory.results" class="person">
         <div class="photo">
@@ -12,13 +11,13 @@
             {{ person._source.fullname }}
           </li>
           <li>
-            {{ person._source.role }} - {{ person._source.department }}
+            {{ person._source.role }}, {{ person._source.department }}
           </li>
           <li>
-            phone: {{ person._source.phone }}
+            <a href="mailto:{{ person._source.email }}">{{ person._source.email }}</a>
           </li>
           <li>
-            email: {{ person._source.email }}
+            {{ person._source.phone }}
           </li>
         </ul>
       </div>

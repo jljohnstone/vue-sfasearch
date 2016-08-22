@@ -1,7 +1,7 @@
 <template>
   <div class="calendar-results">
     <h2>Event Results</h2>
-    <p>Events called: {{ terms }}</p>
+    <p>Events containing: {{ terms }}</p>
   </div>
 </template>
 

@@ -1,18 +1,17 @@
 <template>
   <div class="website-results">
-    <h2>Website Results</h2>
-    <p>Websites containing: {{ terms }}</p>
-      <div v-for="entry in website.results" class="website-result">
-        <div class="result-title">
-          <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
-        </div>
-        <div class="result-url">
-          {{ entry._source.url }}
-        </div>
-        <div class="result-body">
-          {{{ entry.highlight.body }}}
-        </div>
+    <h2>Other Results</h2>
+    <div v-for="entry in website.results" class="website-result">
+      <div class="result-title">
+        <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
       </div>
+      <div class="result-url">
+        {{ entry._source.url }}
+      </div>
+      <div class="result-body">
+        {{{ entry.highlight.body }}}
+      </div>
+    </div>
   </div>
 </template>
 
