@@ -3,14 +3,14 @@
     <div class="search-form-container">
       <div class="search-form">
         <form @submit.prevent="requestSearch">
-          <input type="text" v-model="terms">
+          <input type="text" aria-label="Search Terms" v-model="terms">
           <button type="submit" class="">Search</button>
         </form>
       </div>
     </div>
     <div class="terms" v-show="terms">
       <h1>
-        Results for <strong>{{ terms }}</strong>
+        Search results for <strong>{{ terms }}</strong>
       </h1>
     </div>
   </div>
