@@ -4,11 +4,11 @@
     <div class="people">
       <div v-for="person in directory.results" class="person">
         <div class="photo">
-          <img :src="person._source.image" :alt="person._source.fullname">
+          <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}"><img :src="person._source.image" :alt="person._source.fullname"></a>
         </div>
         <ul class="details">
           <li class="name">
-            {{ person._source.fullname }}
+            <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}">{{ person._source.fullname }}</a>
           </li>
           <li>
             {{ person._source.role }}, {{ person._source.department }}
