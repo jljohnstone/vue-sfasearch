@@ -47,7 +47,7 @@
         this.performSearch(this.terms)
       },
       performSearch (keywords) {
-        this.$broadcast('runSearch', this.terms)
+        this.$broadcast('runSearch', keywords)
       }
     },
     events: {
