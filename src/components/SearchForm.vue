@@ -8,11 +8,6 @@
         </form>
       </div>
     </div>
-    <div class="terms" v-show="terms">
-      <h1>
-        Search results for <strong>{{ terms }}</strong>
-      </h1>
-    </div>
   </div>
 </template>
 
