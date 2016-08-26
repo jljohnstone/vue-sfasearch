@@ -2,7 +2,7 @@
   <div class="directory-results" v-show="count">
     <h2>People Results</h2>
     <div class="people">
-      <div v-for="person in directory.results" class="person">
+      <div v-for="person in directory.hits.hits" class="person">
         <div class="photo">
           <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}"><img :src="person._source.image" :alt="person._source.fullname"></a>
         </div>
@@ -42,25 +42,32 @@
         this.count = 0
         this.terms = terms
         this.removeSlick()
-        var searchURI = 'http://library.sfasu.edu/api/search/directory/json?q=' + this.terms
-        this.$http.jsonp(searchURI).then((response) => {
+        var searchURI = 'http://library.sfasu.edu/api/sfa/directory?cache=true&size=999&q=' + this.terms
+        this.$http.get(searchURI).then((response) => {
           this.$set('directory', response.json())
           this.$dispatch('searchComplete', 'directory')
-          this.$set('count', this.directory.total)
-          // console.log('count: ' + this.count)
+          this.$set('count', this.directory.hits.total)
           this.initSlick()
         }, (response) => {
-          console.error('error fetching directory JSON')
+          console.error('error fetching directory results JSON')
         })
       }
     },
     methods: {
       initSlick () {
         this.$nextTick(function () {
-          // console.log('initSlick')
           $('.people').slick({
             slidesToShow: 3,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+            ]
           })
         })
       },
@@ -78,13 +85,18 @@
   @import "../assets/scss/app";
   .directory-results {
     @include outer-container;
+    // margin: 1em;
   }
   .people {
     @include row();
     .person {
-      padding: rem(10);
+      @include media($mobile) {
+        // border-right: none;
+      }
       background-color: tint($gray, 20%);
-      border-right:rem(10) solid #fff;
+      border-right:rem(5) solid #fff;
+      border-left:rem(5) solid #fff;
+      padding: rem(10);
       .photo {
         @include span-columns(3 of 12);
         img {

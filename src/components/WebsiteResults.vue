@@ -1,8 +1,8 @@
 <template>
-  <div class="website-results">
+  <div class="website-results" v-show="count">
     <h2>Website Results</h2>
     <ol class="website-results-list">
-      <li v-for="entry in website.results" class="website-result">
+      <li v-for="entry in website.hits.hits" class="website-result">
         <div class="result-title">
           <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
         </div>
@@ -17,24 +17,25 @@
   </div>
 </template>
 
-
 <script>
 export default {
   data () {
     return {
-      website: ''
+      website: '',
+      count: 0
     }
   },
   props: ['terms'],
   events: {
     runSearch (terms) {
       this.terms = terms
-      var searchURI = 'http://library.sfasu.edu/api/search/sfasu/json?q=' + this.terms
-      this.$http.jsonp(searchURI).then((response) => {
+      var searchURI = 'http://library.sfasu.edu/api/sfa/website?cache=true&size=100&q=' + this.terms
+      this.$http.get(searchURI).then((response) => {
         this.$set('website', response.json())
         this.$dispatch('searchComplete', 'website')
+        this.$set('count', this.website.hits.total)
       }, (response) => {
-        console.log('error')
+        console.error('error fetching website results JSON')
       })
     }
   }
@@ -46,9 +47,6 @@ export default {
   .website-results {
     @include outer-container;
   }
-  .website-results-list {
-    padding:0;
-  }
   .website-result {
     @include span-columns(8 of 12)
     // margin-bottom:2em;
@@ -58,9 +56,6 @@ export default {
     .result-body {
       margin-top: 0.5rem;
       margin-bottom: 1.5rem;
-      em {
-        font-style: normal;
-      }
     }
     .result-url {
       color: green;

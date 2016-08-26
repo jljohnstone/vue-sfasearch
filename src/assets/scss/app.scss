@@ -5,6 +5,8 @@
 $purple: #5f259f;
 $gray: #e5e5e5;
 
+// == default styles
+
 #{$all-text-inputs} {
   border: rem(2) solid $gray;
   border-radius: rem(5);
@@ -32,8 +34,36 @@ $gray: #e5e5e5;
   // background-color: #00f;
 }
 
-ul {
+ul,ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+em {
+  font-style: normal;
+}
+
+// == breakpoints
+
+$mobile: rem(480);
+
+// slick styling
+
+.slick-arrow, .slick-arrow:focus {
+  background:shade($gray, 60%);
+  height:100%;
+  width:rem(40);
+  opacity: 0.5;
+  z-index:1000;
+  &:hover {
+    background:shade($gray, 80%);
+  }
+  &.slick-next {
+    padding-right:rem(10);
+    right:rem(-35);
+  }
+  &.slick-prev {
+    padding-left:rem(10);
+    left:rem(-35);
+  }
 }
