@@ -1,3 +1,7 @@
+
+// $visual-grid: true;
+$visual-grid-color: red;
+
 @import "bourbon";
 @import "neat";
 
@@ -45,25 +49,40 @@ em {
 
 // == breakpoints
 
-$mobile: rem(480);
+$medium-up: rem(480);
+
+.outer-container-padding {
+  padding:rem(10);
+  @include media($medium-up) {
+    padding:0;
+  }
+}
 
 // slick styling
+
+$slick-button-offset: -5;
+$slick-button-radius: 5;
 
 .slick-arrow, .slick-arrow:focus {
   background:shade($gray, 60%);
   height:100%;
-  width:rem(40);
-  opacity: 0.5;
+  width:rem(30);
+  opacity: 0.4;
   z-index:1000;
   &:hover {
     background:shade($gray, 80%);
+    opacity: 0.5;
   }
   &.slick-next {
     padding-right:rem(10);
-    right:rem(-35);
+    border-top-right-radius: rem($slick-button-radius);
+    border-bottom-right-radius: rem($slick-button-radius);
+    right:rem($slick-button-offset);
   }
   &.slick-prev {
     padding-left:rem(10);
-    left:rem(-35);
+    border-top-left-radius: rem($slick-button-radius);
+    border-bottom-left-radius: rem($slick-button-radius);
+    left:rem($slick-button-offset);
   }
 }

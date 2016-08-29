@@ -31,7 +31,9 @@
     props: ['terms'],
     events: {
       runSearch (terms) {
+        this.count = 0
         this.terms = terms
+        this.removeSlick()
         var searchURI = 'http://library.sfasu.edu/api/sfa/events?cache=true&size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('calendar', response.json())
@@ -76,14 +78,20 @@
   @import "../assets/scss/app";
   .calendar-results {
     @include outer-container;
+    @extend .outer-container-padding;
   }
   .events {
     @include row();
     .event {
-      background-color:tint($gray, 20%);
+      background:tint($gray, 20%) url('../assets/calendar.png') no-repeat rem(10) rem(10);
+      background-size:rem(33);
       border-right:rem(5) solid #fff;
       border-left:rem(5) solid #fff;
       padding: rem(10);
+      padding-left:rem(30);
+      ul {
+        margin-left:rem(30);
+      }
       .name {
         font-size: rem(14);
       }

@@ -85,14 +85,11 @@
   @import "../assets/scss/app";
   .directory-results {
     @include outer-container;
-    // margin: 1em;
+    @extend .outer-container-padding;
   }
   .people {
     @include row();
     .person {
-      @include media($mobile) {
-        // border-right: none;
-      }
       background-color: tint($gray, 20%);
       border-right:rem(5) solid #fff;
       border-left:rem(5) solid #fff;

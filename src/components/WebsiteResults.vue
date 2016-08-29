@@ -46,10 +46,16 @@ export default {
   @import "../assets/scss/app";
   .website-results {
     @include outer-container;
+    @extend .outer-container-padding;
+  }
+  .website-results-list {
+    @include row();
   }
   .website-result {
-    @include span-columns(8 of 12)
-    // margin-bottom:2em;
+    @include span-columns(12);
+    @include media($medium-up) {
+      @include span-columns(8 of 12)
+    }
     .result-title {
       font-size:1.2rem;
     }

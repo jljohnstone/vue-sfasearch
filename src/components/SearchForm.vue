@@ -30,12 +30,12 @@
   .search-form-container {
     background-color: $gray;
     border-bottom: rem(5) solid shade($gray, 10%);
-    // margin-top: rem(100);
     padding-top: rem(20);
     padding-bottom: rem(20);
   }
   .search-form {
     @include outer-container;
+    @extend .outer-container-padding;
   }
   form {
     @include span-columns(6);
