@@ -82,6 +82,8 @@
   }
   .events {
     @include row();
+    padding-left:rem(20);
+    padding-right:rem(20);
     .event {
       background:tint($gray, 20%) url('../assets/calendar.png') no-repeat rem(10) rem(10);
       background-size:rem(33);

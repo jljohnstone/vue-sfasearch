@@ -8,7 +8,9 @@
         </div>
         <ul class="details">
           <li class="name">
-            <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}">{{ person._source.fullname }}</a>
+            <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}">
+              {{ person._source.fullname }}
+            </a>
           </li>
           <li>
             {{ person._source.role }}, {{ person._source.department }}
@@ -89,6 +91,8 @@
   }
   .people {
     @include row();
+    padding-left:rem(20);
+    padding-right:rem(20);
     .person {
       background-color: tint($gray, 20%);
       border-right:rem(5) solid #fff;

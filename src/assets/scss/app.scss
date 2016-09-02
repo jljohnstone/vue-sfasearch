@@ -8,6 +8,7 @@ $visual-grid-color: red;
 // == global variables
 $purple: #5f259f;
 $gray: #e5e5e5;
+$black: #060808;
 
 // == default styles
 
@@ -46,6 +47,10 @@ ul,ol {
 em {
   font-style: normal;
 }
+h2 {
+  margin-top:2em;
+  margin-bottom:0.5em;
+}
 
 // == breakpoints
 
@@ -64,14 +69,14 @@ $slick-button-offset: -5;
 $slick-button-radius: 5;
 
 .slick-arrow, .slick-arrow:focus {
-  background:shade($gray, 60%);
+  background:$purple;
   height:100%;
   width:rem(30);
-  opacity: 0.4;
+  // opacity: 0.4;
   z-index:1000;
   &:hover {
-    background:shade($gray, 80%);
-    opacity: 0.5;
+    background:$black;
+    // opacity: 0.5;
   }
   &.slick-next {
     padding-right:rem(10);
