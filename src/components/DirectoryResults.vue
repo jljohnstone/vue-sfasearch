@@ -2,7 +2,7 @@
   <div class="directory-results" v-show="count">
     <h2>People Results</h2>
     <div class="people">
-      <div v-for="person in directory.hits.hits" class="person">
+      <div v-for="person in directory.hits.hits" class="sfa-person">
         <div class="photo">
           <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}"><img :src="person._source.image" :alt="person._source.fullname"></a>
         </div>
@@ -93,7 +93,7 @@
     @include row();
     padding-left:rem(20);
     padding-right:rem(20);
-    .person {
+    .sfa-person {
       background-color: tint($gray, 20%);
       border-right:rem(5) solid #fff;
       border-left:rem(5) solid #fff;

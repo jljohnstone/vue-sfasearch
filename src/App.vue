@@ -73,7 +73,10 @@
   @import "./assets/scss/app";
   body {
     margin:0;
-    font-family: $lucida-grande;
+    // font-family: $lucida-grande;
+  }
+  #app {
+    margin-top:rem(100)
   }
   a {
     color: $purple;

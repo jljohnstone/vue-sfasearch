@@ -1,16 +1,499 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SFA Search</title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SFA Search</title>
+  <link rel="stylesheet" href="./static/css/style.css" />
+  <!-- Vendor Styles -->
+	<link rel="stylesheet" href="./static/vendor/formstone/css/dropdown.css" />
+  <link rel="stylesheet" href="./static/vendor/magnific/magnific.css" />
+	<link rel="stylesheet" href="./static/vendor/custom-scrollbar/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" href="./static/vendor/jquery-ui/jquery-ui.min.css" />
+	<link rel="stylesheet" href="./static/vendor/bookblock/bookblock.css" />
+	<link rel="stylesheet" href="./static/vendor/animate.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
+  <!-- Vendor JS -->
+  <script src="./static/vendor/jquery-1.11.3.min.js"></script>
+  <script src="./static/vendor/formstone/js/core.js"></script>
+  <script src="./static/vendor/formstone/js/touch.js"></script>
+  <script src="./static/vendor/formstone/js/dropdown.js"></script>
+
+  <script src="./static/vendor/isotope/isotope.pkgd.min.js"></script>
+	<script src="./static/vendor/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="./static/vendor/skrollr/skrollr.min.js"></script>
+	<script src="./static/vendor/magnific/magnific.js"></script>
+	<script src="./static/vendor/jquery.mousewheel.min.js"></script>
+	<script src="./static/vendor/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="./static/vendor/jquery-ui/jquery-ui.min.js"></script>
+	<script src="./static/vendor/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+	<script src="./static/vendor/bookblock/modernizr.custom.js"></script>
+	<script src="./static/vendor/bookblock/jquerypp.custom.js"></script>
+	<script src="./static/vendor/bookblock/jquery.bookblock.min.js"></script>
+
+  <script src="./static/js/functions.js"></script>
+</head>
+
+<body>
+  <a href="#main-content" class="visually-hidden focusable">Skip to main content</a>
+
+
+  <div class="wrapper">
+    <header class="header header-secondary">
+
+      <div>
+        <div class="bar">
+          <div class="shell">
+            <div class="bar-logo">
+              <a href="http://www.sfasu.edu/"><img alt="Stephen F. Austin State University" height="23" src="./static/css/images/temp/sfa-bar-logo.png" width="507" /></a>
+            </div>
+            <!-- /.bar-logo -->
+
+            <div class="bar-aside">
+              <nav class="nav-secondary">
+                <ul>
+                  <li><a href="http://www.sfasu.edu/about-sfa/news/"><i class="ico-newspaper">News</i> </a></li>
+                  <li><a href="https://orion.sfasu.edu/calendars/"><i class="ico-calendar">Calendar</i> </a></li>
+                  <li><a href="http://mysfa.sfasu.edu/" target="_blank"><i class="ico-my-sfa">mySFA</i> </a></li>
+                  <li><a class="nav-search-btn" href="#nav-search"><i class="ico-search">Search</i> </a>
+                    <div class="nav-search search" id="nav-search">
+                      <form action="?" method="get"><a class="search-close" href="#">X</a> <label class="search-label" for="q3">Can we help you find what you’re looking for?</label>
+                        <div class="search-inner"><input class="search-field" id="q3" name="q3" placeholder="SEARCH" type="search" value="" /><button class="search-btn" type="submit"></button></div>
+                        <!-- /.search-inner -->
+                      </form>
+                    </div>
+                    <!-- /.search -->
+                  </li>
+                </ul>
+              </nav>
+              <!-- /.nav-secondary -->
+
+              <div class="bar-info"><label for="field-info-for">Info For:</label> <select class="select" data-dropdown-options="{&quot;links&quot;:&quot;true&quot;}" id="field-info-for" name="field-info-for"><option value="/info-for/future-students">Future Students</option><option value="/info-for/current-students">Current Students</option><option value="/info-for/new-students">New Students</option><option value="/info-for/faculty-staff">Faculty &amp; Staff</option><option value="/info-for/parents">Parents</option><option value="/info-for/high-school-counselors">High School Counselors</option><option value="/info-for/alumni-friends">Alumni &amp; Friends</option> </select></div>
+              <!-- /.bar-info -->
+            </div>
+            <!-- /.bar-aside -->
+          </div>
+          <!-- /.shell -->
+        </div>
+        <!-- /.bar -->
+      </div>
+
+
+      <nav class="nav" role="navigation">
+        <div class="shell">
+          <ul>
+            <li>
+              <a href="http://www.sfasu.edu/about-sfa">About SFA</a>
+              <ul>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#location">Location</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#history">History</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#at-a-glance">At a Glance</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#community-impact">Community Impact</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#university-leadership">University Leadership</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#board-of-regents">Board of Regents</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#faculty-spotlight">Faculty Spotlight</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/about-sfa#news-media-center">News &amp; Media Center</a>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="http://www.sfasu.edu/academics">Academics</a>
+              <ul>
+                <li>
+                  <a href="http://www.sfasu.edu/academics#explore-academics">Explore Academics</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/academics#colleges">Colleges</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/academics#graduate-school">Graduate School</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/academics#online-degree">Online Degree</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/academics#research">Research</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/academics#library">Library</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/academics#academic-calendar">Academic Calendar</a>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="http://www.sfasu.edu/admissions-and-aid">Admissions &amp; Aid</a>
+              <ul>
+                <li>
+                  <a href="http://www.sfasu.edu/admissions-and-aid#admissions-process">Admissions Process</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/admissions-and-aid#tuition-costs">Tuition &amp; Costs</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/admissions-and-aid#financial-aid">Financial Aid</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/admissions-and-aid#visit-campus">Visit Campus</a>
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+
+
+
+          <!--</div>-->
+          <!--</nav>-->
+          <!--<nav class="nav" role="navigation" aria-labelledby="block-mainnavigationright-menu" id="block-mainnavigationright" class="contextual-region">-->
+
+          <!--<div class="shell">-->
+
+          <ul>
+            <li>
+              <a href="http://www.sfasu.edu/life-at-sfa">Life at SFA</a>
+              <ul>
+                <li>
+                  <a href="http://www.sfasu.edu/life-at-sfa#discover-sfa-fun">Discover SFA Fun</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/life-at-sfa#traditions-spirit">Traditions &amp; Spirit</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/life-at-sfa#get-involved">Get Involved</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/life-at-sfa#campus-highlights">Campus Highlights</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/life-at-sfa#housing-dining">Housing &amp; Dining</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/life-at-sfa#health-safety">Health &amp; Safety</a>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="http://www.sfasu.edu/arts-athletics">Arts &amp; Athletics</a>
+              <ul>
+                <li>
+                  <a href="http://www.sfasu.edu/arts-athletics#cheer-on-athletics">Cheer on Athletics</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/arts-athletics#enjoy-arts">Enjoy the Arts</a>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="http://www.sfasu.edu/alumni-giving">Alumni &amp; Giving</a>
+              <ul>
+                <li>
+                  <a href="http://www.sfasu.edu/alumni-giving/alumni-association">Alumni Association</a>
+                </li>
+                <li>
+                  <a href="http://www.sfasu.edu/alumni-giving/give-to-sfa">Give to SFA</a>
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+
+
+
+          <!--</div>-->
+          <!--</nav>-->
+
+
+        </div>
+      </nav>
+
+
+
+      <a href="http://www.sfasu.edu/" class="header-logo">
+        <span>
+    <img src="./static/css/images/logo.png" height="116" width="118" alt="Stephen F. Austin State University">
+
+    <i>Axe &rsquo;Em, Jacks!</i>
+  </span>
+      </a>
+
+      <a href="#" class="btn-nav">
+        <i class="ico-nav"></i>
+      </a>
+
+      <a href="#" class="btn-search">
+        <i class="ico-search-btn"></i>
+      </a>
+
+      <div class="search-box">
+        <div class="search-box-actions">
+          <a href="#" class="search-box-close">
+            <i class="ico-close"></i>
+          </a>
+        </div>
+        <!-- /.search-box-actions -->
+
+        <div class="search">
+          <form action="?" method="get">
+            <div class="search-inner">
+              <input type="search" name="q" id="q-alt" value="" placeholder="SEARCH" class="search-field">
+
+              <button type="submit" class="search-btn">
+          <i class="ico-search-purple"></i>
+        </button>
+            </div>
+            <!-- /.search-inner -->
+          </form>
+        </div>
+        <!-- /.search -->
+      </div>
+      <!-- /.search-box -->
+
+      <nav class="nav-mobile">
+        <a href="#" class="nav-close">
+          <i class="ico-close-alt"></i>
+        </a>
+
+        <div class="nav-bar">
+          <ul>
+            <li>
+              <a href="http://www.sfasu.edu/about-sfa/news">
+                <i class="ico-newspaper-black"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://orion.sfasu.edu/calendars/">
+                <i class="ico-calendar-black"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="http://mysfa.sfasu.edu/" target="_blank">MySFA</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.nav-bar -->
+        <div class="nav-body">
+
+          <nav role="navigation" aria-labelledby="block-mainnavigationleft-menu" id="block-mainnavigationleft">
+
+
+            <ul>
+              <li>
+                <a href="http://www.sfasu.edu/about-sfa">About SFA</a>
+                <ul>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#location">Location</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#history">History</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#at-a-glance">At a Glance</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#community-impact">Community Impact</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#university-leadership">University Leadership</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#board-of-regents">Board of Regents</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#faculty-spotlight">Faculty Spotlight</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/about-sfa#news-media-center">News &amp; Media Center</a>
+                  </li>
+                </ul>
+
+              </li>
+              <li>
+                <a href="http://www.sfasu.edu/academics">Academics</a>
+                <ul>
+                  <li>
+                    <a href="http://www.sfasu.edu/academics#explore-academics">Explore Academics</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/academics#colleges">Colleges</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/academics#graduate-school">Graduate School</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/academics#online-degree">Online Degree</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/academics#research">Research</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/academics#library">Library</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/academics#academic-calendar">Academic Calendar</a>
+                  </li>
+                </ul>
+
+              </li>
+              <li>
+                <a href="http://www.sfasu.edu/admissions-and-aid">Admissions &amp; Aid</a>
+                <ul>
+                  <li>
+                    <a href="http://www.sfasu.edu/admissions-and-aid#admissions-process">Admissions Process</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/admissions-and-aid#tuition-costs">Tuition &amp; Costs</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/admissions-and-aid#financial-aid">Financial Aid</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/admissions-and-aid#visit-campus">Visit Campus</a>
+                  </li>
+                </ul>
+
+              </li>
+            </ul>
+
+
+
+          </nav>
+          <nav role="navigation" aria-labelledby="block-mainnavigationright-2-menu" id="block-mainnavigationright-2">
+
+
+            <ul>
+              <li>
+                <a href="http://www.sfasu.edu/life-at-sfa">Life at SFA</a>
+                <ul>
+                  <li>
+                    <a href="http://www.sfasu.edu/life-at-sfa#discover-sfa-fun">Discover SFA Fun</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/life-at-sfa#traditions-spirit">Traditions &amp; Spirit</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/life-at-sfa#get-involved">Get Involved</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/life-at-sfa#campus-highlights">Campus Highlights</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/life-at-sfa#housing-dining">Housing &amp; Dining</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/life-at-sfa#health-safety">Health &amp; Safety</a>
+                  </li>
+                </ul>
+
+              </li>
+              <li>
+                <a href="http://www.sfasu.edu/arts-athletics">Arts &amp; Athletics</a>
+                <ul>
+                  <li>
+                    <a href="http://www.sfasu.edu/arts-athletics#cheer-on-athletics">Cheer on Athletics</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/arts-athletics#enjoy-arts">Enjoy the Arts</a>
+                  </li>
+                </ul>
+
+              </li>
+              <li>
+                <a href="http://www.sfasu.edu/alumni-giving">Alumni &amp; Giving</a>
+                <ul>
+                  <li>
+                    <a href="http://www.sfasu.edu/alumni-giving/alumni-association">Alumni Association</a>
+                  </li>
+                  <li>
+                    <a href="http://www.sfasu.edu/alumni-giving/give-to-sfa">Give to SFA</a>
+                  </li>
+                </ul>
+
+              </li>
+            </ul>
+
+
+
+          </nav>
+
+
+
+        </div>
+        <div class="nav-info">
+          <span>Info For</span>
+
+          <ul class="nav-info-alt">
+            <li>
+              <a href="http://www.sfasu.edu/info-for/future-students">Future <br>Students</a>
+            </li>
+
+            <li>
+              <a href="http://www.sfasu.edu/info-for/new-students">New <br>Students</a>
+            </li>
+
+            <li>
+              <a href="http://www.sfasu.edu/info-for/current-students">Current <br>Students</a>
+            </li>
+
+            <li>
+              <a href="http://www.sfasu.edu/info-for/faculty-staff">Faculty &amp; <br>Staff</a>
+            </li>
+          </ul>
+          <!-- /.nav-info-alt -->
+
+          <ul>
+            <li>
+              <a href="http://www.sfasu.edu/info-for/parents">Parents</a>
+            </li>
+
+            <li>
+              <a href="http://www.sfasu.edu/info-for/high-school-counselors">High School Counselors</a>
+            </li>
+
+            <li>
+              <a href="http://www.sfasu.edu/info-for/alumni-friends">Alumni &amp; Friends</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.nav-info -->
+
+        <div class="nav-date">
+          <span id="mobile-weather"></span>
+        </div>
+        <!-- /.nav-date -->
+      </nav>
+      <!-- /.nav-mobile -->
+
+    </header>
+    <!-- /.header -->
     <app></app>
     <!-- built files will be auto injected -->
-  </body>
+</body>
+
 </html>

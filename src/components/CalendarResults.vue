@@ -2,7 +2,7 @@
   <div class="calendar-results" v-show="count">
     <h2>Event Results</h2>
     <div class="events">
-      <div v-for="event in calendar.hits.hits" class="event">
+      <div v-for="event in calendar.hits.hits" class="sfa-event">
         <ul>
           <li class="name">
             <a href="{{ event._source.link }}">{{{ event.highlight.title }}}</a>
@@ -84,7 +84,7 @@
     @include row();
     padding-left:rem(20);
     padding-right:rem(20);
-    .event {
+    .sfa-event {
       background:tint($gray, 20%) url('../assets/calendar.png') no-repeat rem(10) rem(10);
       background-size:rem(33);
       border-right:rem(5) solid #fff;
