@@ -4,7 +4,7 @@
       <div class="search-form">
         <form @submit.prevent="requestSearch">
           <input type="text" aria-label="Search Terms" v-model="terms">
-          <button type="submit" class="">Search</button>
+          <button type="submit" class="search-btn">Search</button>
         </form>
       </div>
     </div>
@@ -38,7 +38,30 @@
     @extend .outer-container-padding;
   }
   form {
-    @include span-columns(6);
+    vertical-align: top;
+    input {
+      @include span-columns(8);
+      @include media($medium-up) {
+        @include span-columns(4);
+      }
+    }
+    button {
+      @include span-columns(4);
+      @include media($medium-up) {
+        @include span-columns(2);
+      }
+    }
+  }
+  .search-btn {
+    padding:rem(5) rem(15);
+    background:#fff;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    &:hover {
+      background:shade($gray, 10%);
+    }
   }
   .terms {
     @include outer-container;

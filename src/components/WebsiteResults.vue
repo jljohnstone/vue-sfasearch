@@ -60,6 +60,7 @@ export default {
       font-size:1.2rem;
     }
     .result-body {
+      color:#333;
       margin-top: 0.5rem;
       margin-bottom: 1.5rem;
     }

@@ -5,7 +5,10 @@
       <div v-for="event in calendar.hits.hits" class="sfa-event">
         <ul>
           <li class="name">
-            <a href="{{ event._source.link }}">{{{ event.highlight.title }}}</a>
+            <a href="{{ event._source.link }}">
+              <span v-if="event.highlight.title">{{{ event.highlight.title }}}</span>
+              <span v-else>{{{ event._source.title }}}</span>
+            </a>
           </li>
           <li class="date">
             {{ event._source.date | toDate }}
@@ -34,7 +37,7 @@
         this.count = 0
         this.terms = terms
         this.removeSlick()
-        var searchURI = 'http://library.sfasu.edu/api/sfa/events?cache=true&size=100&q=' + this.terms
+        var searchURI = 'http://library.sfasu.edu/api/sfa/events?cache=false&size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('calendar', response.json())
           this.$dispatch('searchComplete', 'calendar')
