@@ -14,6 +14,10 @@ Vue.filter('toDate', function (value) {
   return formattedDate
 })
 
+Vue.filter('fixEventLink', function (value) {
+  return value.replace('&ID=', '#event')
+})
+
 new Vue({
   el: 'body',
   components: { App }

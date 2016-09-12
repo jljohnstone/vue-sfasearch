@@ -5,7 +5,7 @@
       <div v-for="event in calendar.hits.hits" class="sfa-event">
         <ul>
           <li class="name">
-            <a href="{{ event._source.link }}">
+            <a href="{{ event._source.link | fixEventLink }}">
               <span v-if="event.highlight.title">{{{ event.highlight.title }}}</span>
               <span v-else>{{{ event._source.title }}}</span>
             </a>
