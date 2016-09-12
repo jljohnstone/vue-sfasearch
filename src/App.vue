@@ -13,6 +13,8 @@
   import CalendarResults from './components/CalendarResults'
   import WebsiteResults from './components/WebsiteResults'
 
+  import queryString from 'query-string'
+
   export default {
     data () {
       return {
@@ -26,39 +28,25 @@
       WebsiteResults
     },
     ready () {
-      var initialTerms = this.getParameterByName('q')
-      this.$set('terms', initialTerms)
+      var qs = queryString.parse(window.location.search)
+      this.$set('terms', qs.q)
       console.log(this.terms ? 'initial terms present' : 'no initial terms')
       if (this.terms) {
         this.runInitialSearch()
       }
     },
     methods: {
-      getParameterByName (name, url) {
-        if (!url) url = window.location.href
-        name = name.replace(/[\[\]]/g, '\\$&')
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)')
-        var results = regex.exec(url)
-        if (!results) return null
-        if (!results[2]) return ''
-        return decodeURIComponent(results[2].replace(/\+/g, ' '))
-      },
-      updateQueryString (key, value, url) {
-        if (!url) url = window.location.href
-        var re = new RegExp('([?&])' + key + '=.*?(&|$)', 'i')
-        var separator = url.indexOf('?') !== -1 ? '&' : '?'
-        if (url.match(re)) {
-          return url.replace(re, '$1' + key + '=' + value + '$2')
-        } else {
-          return url + separator + key + '=' + value
-        }
-      },
       runInitialSearch () {
         this.performSearch(this.terms)
       },
       performSearch (keywords) {
         this.$broadcast('runSearch', keywords)
-        this.updateQueryString('q', keywords)
+        // TODO: update query string without causing an infinite search loop
+        // var parsed = queryString.parse(window.location.search)
+        // console.log(parsed)
+        // parsed.q = keywords
+        // var stringified = queryString.stringify(parsed)
+        // window.location.search = stringified
       }
     },
     events: {
@@ -73,7 +61,6 @@
   @import "./assets/scss/app";
   body {
     margin:0;
-    // font-family: $lucida-grande;
   }
   #app {
     margin-top:rem(100)
