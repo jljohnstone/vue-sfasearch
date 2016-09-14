@@ -37,7 +37,7 @@
         this.count = 0
         this.terms = terms
         this.removeSlick()
-        var searchURI = 'http://library.sfasu.edu/api/sfa/events?cache=false&size=100&q=' + this.terms
+        var searchURI = 'http://library.sfasu.edu/api/sfa/events?size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('calendar', response.json())
           this.$dispatch('searchComplete', 'calendar')

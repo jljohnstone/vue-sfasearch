@@ -44,7 +44,7 @@
         this.count = 0
         this.terms = terms
         this.removeSlick()
-        var searchURI = 'http://library.sfasu.edu/api/sfa/directory?cache=true&size=999&q=' + this.terms
+        var searchURI = 'http://library.sfasu.edu/api/sfa/directory?size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('directory', response.json())
           this.$dispatch('searchComplete', 'directory')

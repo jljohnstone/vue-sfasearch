@@ -29,7 +29,7 @@ export default {
   events: {
     runSearch (terms) {
       this.terms = terms
-      var searchURI = 'http://library.sfasu.edu/api/sfa/website?cache=true&size=100&q=' + this.terms
+      var searchURI = 'http://library.sfasu.edu/api/sfa/website?size=100&q=' + this.terms
       this.$http.get(searchURI).then((response) => {
         this.$set('website', response.json())
         this.$dispatch('searchComplete', 'website')
