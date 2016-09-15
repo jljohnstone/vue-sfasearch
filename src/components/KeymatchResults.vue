@@ -25,7 +25,7 @@ export default {
         var allTerms = response.data.keymatches
         for (var i = 0; i < allTerms.length; i++) {
           var thisTerm = allTerms[i]
-          if (thisTerm.term === terms) {
+          if (thisTerm.term.toLowerCase() === terms.toLowerCase()) {
             this.$set('keymatch', thisTerm)
             this.$set('count', 1)
             return
