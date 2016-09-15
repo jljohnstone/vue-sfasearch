@@ -1,0 +1,169 @@
+{
+  "keymatches": [
+    {
+      "term": "calendar",
+      "title": "Calendar",
+      "url": "https://orion.sfasu.edu/calendars/"
+    },
+    {
+      "term": "cte",
+      "title": "Career and Technical Education",
+      "url": "http://www.cte.sfasu.edu/"
+    },
+    {
+      "term": "dorms",
+      "title": "Residence Life (dorms)",
+      "url": "http://www.sfasu.edu/reslife/"
+    },
+    {
+      "term": "dorm",
+      "title": "Residence Life (dorm)",
+      "url": "http://www.sfasu.edu/reslife/"
+    },
+    {
+      "term": "housing",
+      "title": "Residence Life (housing)",
+      "url": "http://www.sfasu.edu/reslife/"
+    },
+    {
+      "term": "bulletin",
+      "title": "Bulletin",
+      "url": "http://www.sfasu.edu/bulletin"
+    },
+    {
+      "term": "general bulletin",
+      "title": "General Bulletin",
+      "url": "http://www.sfasu.edu/bulletin"
+    },
+    {
+      "term": "undergraduate catalog",
+      "title": "Undergraduate Catalog",
+      "url": "http://www.sfasu.edu/bulletin"
+    },
+    {
+      "term": "graduate catalog",
+      "title": "Graduate Catalog",
+      "url": "http://www.sfasu.edu/graduate/290.asp"
+    },
+    {
+      "term": "catalog",
+      "title": "Catalog",
+      "url": "http://www.sfasu.edu/bulletin"
+    },
+    {
+      "term": "email",
+      "title": "Access faculty/staff email online",
+      "url": "https://mymail.sfasu.edu/owa"
+    },
+    {
+      "term": "outlook",
+      "title": "Access faculty/staff email online",
+      "url": "https://mymail.sfasu.edu/owa"
+    },
+    {
+      "term": "scholarship",
+      "title": "SFA Scholarships",
+      "url": "http://www.sfasu.edu/faid/scholarships.asp"
+    },
+    {
+      "term": "scholarships",
+      "title": "SFA Scholarships",
+      "url": "http://www.sfasu.edu/faid/scholarships.asp"
+    },
+    {
+      "term": "summer camps",
+      "title": "Summer Camps",
+      "url": "http://www.sfasu.edu/summer-camps.asp"
+    },
+    {
+      "term": "summer camp",
+      "title": "Summer Camp",
+      "url": "http://www.sfasu.edu/summer-camps.asp"
+    },
+    {
+      "term": "camp",
+      "title": "Summer Camp",
+      "url": "http://www.sfasu.edu/summer-camps.asp"
+    },
+    {
+      "term": "camps",
+      "title": "Summer Camps",
+      "url": "http://www.sfasu.edu/summer-camps.asp"
+    },
+    {
+      "term": "fixed rate tuition",
+      "title": "Fixed Rate Tuition Plan",
+      "url": "http://www.sfasu.edu/controller/docs/business/fixed-rate-tuition-plan.pdf"
+    },
+    {
+      "term": "map",
+      "title": "Campus Maps",
+      "url": "http://www.sfasu.edu/maps.asp"
+    },
+    {
+      "term": "maps",
+      "title": "Campus Maps",
+      "url": "http://www.sfasu.edu/maps.asp"
+    },
+    {
+      "term": "jackfacts",
+      "title": "JackFacts",
+      "url": "http://www.sfasu.edu/jackfacts/"
+    },
+    {
+      "term": "jack facts",
+      "title": "JackFacts",
+      "url": "http://www.sfasu.edu/jackfacts/"
+    },
+    {
+      "term": "smith hutson",
+      "title": "Smith-Hutson Scholarship",
+      "url": "http://www.sfasu.edu/smith-hutson-scholarship.asp"
+    },
+    {
+      "term": "smith-hutson",
+      "title": "Smith-Hutson Scholarship",
+      "url": "http://www.sfasu.edu/smith-hutson-scholarship.asp"
+    },
+    {
+      "term": "sfatoday",
+      "title": "SFA Today",
+      "url": "http://www.sfasu.edu/news/sfatoday/archivelist.aspx"
+    },
+    {
+      "term": "sfa today",
+      "title": "SFA Today",
+      "url": "http://www.sfasu.edu/news/sfatoday/archivelist.aspx"
+    },
+    {
+      "term": "assessment",
+      "title": "Office of Student Learning and Institutional Assessment",
+      "url": "http://www.sfasu.edu/assessment/"
+    },
+    {
+      "term": "music prep",
+      "title": "SFA Music Prep",
+      "url": "http://www.music.sfasu.edu/outreach.php?link=prep"
+    },
+    {
+      "term": "uasc",
+      "title": "University Assessment Steering Council",
+      "url": "http://www.sfasu.edu/uasc/"
+    },
+    {
+      "term": "university assessment",
+      "title": "University Assessment Steering Council",
+      "url": "http://www.sfasu.edu/uasc/"
+    },
+    {
+      "term": "aramark",
+      "title": "Aramark - SFA Dining",
+      "url": "http://sfasu.campusdish.com/"
+    },
+    {
+      "term": "aarc",
+      "title": "AARC",
+      "url": "https://library.sfasu.edu/aarc/"
+    }
+  ]
+}

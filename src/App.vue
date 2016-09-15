@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="">
     <search-form @new-search="performSearch" :terms="terms"></search-form>
+    <keymatch-results :terms="terms"></keymatch-results>
     <directory-results :terms="terms"></directory-results>
     <calendar-results :terms="terms"></calendar-results>
     <website-results :terms="terms"></website-results>
@@ -12,6 +13,7 @@
   import DirectoryResults from './components/DirectoryResults'
   import CalendarResults from './components/CalendarResults'
   import WebsiteResults from './components/WebsiteResults'
+  import KeymatchResults from './components/KeymatchResults'
 
   import queryString from 'query-string'
 
@@ -25,6 +27,7 @@
       SearchForm,
       DirectoryResults,
       CalendarResults,
+      KeymatchResults,
       WebsiteResults
     },
     ready () {
