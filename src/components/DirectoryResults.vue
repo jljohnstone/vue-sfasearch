@@ -1,7 +1,7 @@
 <template>
-  <div class="directory-results" v-show="count">
+  <div class="directory-results">
     <h2>People Results</h2>
-    <div class="people">
+    <div class="people" v-if="count">
       <div v-for="person in directory.hits.hits" class="sfa-person">
         <div class="photo">
           <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}"><img :src="person._source.image" :alt="person._source.fullname"></a>
@@ -24,6 +24,9 @@
         </ul>
       </div>
     </div>
+    <p v-else>
+      <strong>There were no matching people found.</strong>
+    </p>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="website-results" v-show="count">
+  <div class="website-results">
     <h2>Website Results</h2>
-    <ol class="website-results-list">
+    <ol class="website-results-list" v-if="count">
       <li v-for="entry in website.hits.hits" class="website-result">
         <div class="result-title">
           <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
@@ -14,6 +14,9 @@
         </div>
       </li>
     </ol>
+    <p v-else>
+      <strong>There were no relevant webpages found.</strong>
+    </p>
   </div>
 </template>
 

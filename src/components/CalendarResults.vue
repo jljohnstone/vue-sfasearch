@@ -1,7 +1,7 @@
 <template>
-  <div class="calendar-results" v-show="count">
+  <div class="calendar-results">
     <h2>Event Results</h2>
-    <div class="events">
+    <div class="events" v-if="count">
       <div v-for="event in calendar.hits.hits" class="sfa-event">
         <ul>
           <li class="name">
@@ -16,6 +16,9 @@
         </ul>
       </div>
     </div>
+    <p v-else>
+      <strong>There were no matching events found.</strong>
+    </p>
   </div>
 </template>
 
