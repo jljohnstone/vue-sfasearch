@@ -184,6 +184,26 @@
       "term": "syllabi",
       "title": "Course Information",
       "url": "https://orion.sfasu.edu/courseinformation/"
+    },
+    {
+      "term": "movie",
+      "title": "Student Center Movies",
+      "url": "http://www.sfasu.edu/studentaffairs/71.asp"
+    },
+    {
+      "term": "movies",
+      "title": "Student Center Movies",
+      "url": "http://www.sfasu.edu/studentaffairs/71.asp"
+    },
+    {
+      "term": "movie times",
+      "title": "Student Center Movies",
+      "url": "http://www.sfasu.edu/studentaffairs/71.asp"
+    },
+    {
+      "term": "movie schedule",
+      "title": "Student Center Movies",
+      "url": "http://www.sfasu.edu/studentaffairs/71.asp"
     }
   ]
 }
