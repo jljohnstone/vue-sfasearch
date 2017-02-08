@@ -204,6 +204,46 @@
       "term": "movie schedule",
       "title": "Student Center Movies",
       "url": "http://www.sfasu.edu/studentaffairs/71.asp"
+    },
+    {
+      "term": "timeclock",
+      "title": "TimeClock Plus",
+      "url": "http://www.sfasu.edu/controller/payroll"
+    },
+    {
+      "term": "time clock",
+      "title": "TimeClock Plus",
+      "url": "http://www.sfasu.edu/controller/payroll"
+    },
+    {
+      "term": "timeclock plus",
+      "title": "TimeClock Plus",
+      "url": "http://www.sfasu.edu/controller/payroll"
+    },
+    {
+      "term": "time clock plus",
+      "title": "TimeClock Plus",
+      "url": "http://www.sfasu.edu/controller/payroll"
+    },
+    {
+      "term": "policies",
+      "title": "Policy Manual",
+      "url": "http://www.sfasu.edu/policies"
+    },
+    {
+      "term": "policy",
+      "title": "Policy Manual",
+      "url": "http://www.sfasu.edu/policies"
+    },
+    {
+      "term": "university policies",
+      "title": "Policy Manual",
+      "url": "http://www.sfasu.edu/policies"
+    },
+    {
+      "term": "policy manual",
+      "title": "Policy Manual",
+      "url": "http://www.sfasu.edu/policies"
     }
   ]
 }
