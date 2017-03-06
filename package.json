@@ -1,7 +1,7 @@
 {
   "name": "vue-sfasearch",
   "version": "1.0.0",
-  "description": "Vue.js interface for elasticsearch'",
+  "description": "Vue.js interface for JSON-powered search results'",
   "author": "Jason Johnstone <jljohnstone@sfasu.edu>",
   "private": true,
   "scripts": {

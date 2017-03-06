@@ -1,16 +1,21 @@
 <template>
   <div class="website-results">
     <h2>Website Results</h2>
+    <label><input type="checkbox" v-model="include_docs" v-bind:true-value="true" v-bind:false-value="false">Search documents</label>
     <ol class="website-results-list" v-if="count">
-      <li v-for="entry in website.hits.hits" class="website-result">
+      <li v-for="entry in website.result" class="website-result">
         <div class="result-title">
-          <a href="{{ entry._source.url }}">{{ entry._source.title }}</a>
-        </div>
-        <div class="result-url">
-          {{ entry._source.url }}
+          <i class="fa fa-file-pdf-o" aria-hidden="true" title="PDF file" v-if="entry.filetype === 'pdf'">&nbsp;</i>
+          <a href="{{ entry.url_link }}">
+            {{ entry.content_title || "untitled document"}}
+          </a>
+          <sup class="filetype" v-if="entry.filetype === 'pdf'">[PDF]</sup>
         </div>
         <div class="result-body">
-          {{{ entry.highlight.body }}}
+          {{{ entry.content_description }}}
+        </div>
+        <div class="result-url">
+          {{ entry.url_link }}
         </div>
       </li>
     </ol>
@@ -25,18 +30,22 @@ export default {
   data () {
     return {
       website: '',
-      count: 0
+      count: 0,
+      include_docs: false
     }
   },
   props: ['terms'],
   events: {
     runSearch (terms) {
       this.terms = terms
-      var searchURI = 'http://library.sfasu.edu/api/sfa/website?size=100&q=' + this.terms
+      var searchURI = 'https://search.sfasu.edu/json?num=100&q=' + this.terms
+      if (!this.include_docs) {
+        searchURI += '&ex_q=filetype%3Ahtml'
+      }
       this.$http.get(searchURI).then((response) => {
-        this.$set('website', response.json())
+        this.$set('website', response.json().response)
         this.$dispatch('searchComplete', 'website')
-        this.$set('count', this.website.hits.total)
+        this.$set('count', this.website.record_count)
       }, (response) => {
         console.error('error fetching website results JSON')
       })
@@ -61,15 +70,25 @@ export default {
     }
     .result-title {
       font-size:1.2rem;
+      a:hover {
+        text-decoration: underline;
+      }
     }
     .result-body {
       color:#333;
       margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
     }
     .result-url {
       color: green;
       font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .filetype {
+      color: #777;
+      font-size:0.7rem;
+    }
+    .fa-file-pdf-o {
+      color: #bb0706;
     }
   }
 </style>
