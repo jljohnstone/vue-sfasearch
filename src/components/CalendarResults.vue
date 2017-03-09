@@ -40,6 +40,11 @@
         this.count = 0
         this.terms = terms
         this.removeSlick()
+        this.fetchSearchResults()
+      }
+    },
+    methods: {
+      fetchSearchResults () {
         var searchURI = 'http://library.sfasu.edu/api/sfa/events?size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('calendar', response.json())
@@ -49,9 +54,7 @@
         }, (response) => {
           console.error('error fetching calendar results JSON')
         })
-      }
-    },
-    methods: {
+      },
       initSlick () {
         this.$nextTick(function () {
           $('.events').slick({

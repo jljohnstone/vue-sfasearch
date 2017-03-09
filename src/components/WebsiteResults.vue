@@ -1,7 +1,7 @@
 <template>
   <div class="website-results">
     <h2>Website Results</h2>
-    <label><input type="checkbox" v-model="include_docs" v-bind:true-value="true" v-bind:false-value="false">Search documents</label>
+    <label><input type="checkbox" v-model="include_docs" v-on:click="toggleDocs">Include documents</label>
     <ol class="website-results-list" v-if="count">
       <li v-for="entry in website.result" class="website-result">
         <div class="result-title">
@@ -26,32 +26,41 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      website: '',
-      count: 0,
-      include_docs: false
-    }
-  },
-  props: ['terms'],
-  events: {
-    runSearch (terms) {
-      this.terms = terms
-      var searchURI = 'https://search.sfasu.edu/json?num=100&q=' + this.terms
-      if (!this.include_docs) {
-        searchURI += '&ex_q=filetype%3Ahtml'
+  export default {
+    data () {
+      return {
+        website: '',
+        count: 0,
+        include_docs: false
       }
-      this.$http.get(searchURI).then((response) => {
-        this.$set('website', response.json().response)
-        this.$dispatch('searchComplete', 'website')
-        this.$set('count', this.website.record_count)
-      }, (response) => {
-        console.error('error fetching website results JSON')
-      })
+    },
+    props: ['terms'],
+    events: {
+      runSearch (terms) {
+        this.terms = terms
+        this.fetchSearchResults()
+      }
+    },
+    methods: {
+      fetchSearchResults () {
+        var searchURI = 'https://search.sfasu.edu/json?num=100&q=' + this.terms
+        if (!this.include_docs) {
+          searchURI += '&ex_q=filetype%3Ahtml'
+        }
+        this.$http.get(searchURI).then((response) => {
+          this.$set('website', response.json().response)
+          this.$dispatch('searchComplete', 'website')
+          this.$set('count', this.website.record_count)
+        }, (response) => {
+          console.error('error fetching website results JSON')
+        })
+      },
+      toggleDocs () {
+        this.$set('include_docs', !this.include_docs)
+        this.fetchSearchResults()
+      }
     }
   }
-}
 </script>
 
 <style lang="scss">

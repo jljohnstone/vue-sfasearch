@@ -47,6 +47,11 @@
         this.count = 0
         this.terms = terms
         this.removeSlick()
+        this.fetchSearchResults()
+      }
+    },
+    methods: {
+      fetchSearchResults () {
         var searchURI = 'http://library.sfasu.edu/api/sfa/directory?size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('directory', response.json())
@@ -56,9 +61,7 @@
         }, (response) => {
           console.error('error fetching directory results JSON')
         })
-      }
-    },
-    methods: {
+      },
       initSlick () {
         this.$nextTick(function () {
           $('.people').slick({
