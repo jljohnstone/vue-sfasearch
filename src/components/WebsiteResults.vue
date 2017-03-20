@@ -1,8 +1,8 @@
 <template>
   <div class="website-results">
     <h2>Website Results</h2>
-    <div v-if="count">
-    <label><input type="checkbox" v-model="include_docs" v-on:click="toggleDocs"> Include documents</label>
+    <div class="website-results-wrapper" v-if="count">
+      <label class="include-documents"><input type="checkbox" v-model="include_docs" v-on:click="toggleDocs"> Include documents <span>(check to include PDFs, Word documents and Excel files in results)</span></label>
       <ol class="website-results-list">
         <li v-for="entry in website.result" class="website-result">
           <div class="result-title">
@@ -20,6 +20,10 @@
           </div>
         </li>
       </ol>
+      <div class="note">
+        <h5>Website search improvements</h5>
+        <p>During spring break, we made significant changes to the system that powers the SFA website search. We're continuoulsy adjusting this system to improve the quality of search results. If you have any questions or comments, please <a href="mailto:web-dev@sfasu.edu">let us know</a>.</p>
+      </div>
     </div>
     <p v-else>
       <strong>There were no relevant webpages found.</strong>
@@ -74,10 +78,35 @@
   .website-results-list {
     @include row();
   }
-  .website-result {
+  .include-documents {
     @include span-columns(12);
     @include media($medium-up) {
-      @include span-columns(8 of 12)
+      @include span-columns(8 of 12);
+    }
+    background-color: $gray;
+    padding:0.5rem;
+    margin-bottom:1rem;
+    font-weight:bold;
+    border-radius: 5px;
+    span {
+      color:#777;
+      font-weight:normal;
+    }
+  }
+  .note {
+    @include span-columns(12);
+    @include media($medium-up) {
+      @include span-columns(4 of 12)
+    }
+    background:#f5f5f5;
+    padding:0.5rem;
+  }
+  .website-results-wrapper {
+    @include span-columns(12);
+    .website-results-list {
+      @include media($medium-up) {
+        @include span-columns(8 of 12)
+      }
     }
     .result-title {
       font-size:1.2rem;
