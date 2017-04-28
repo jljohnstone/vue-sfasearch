@@ -22,7 +22,7 @@
       </ol>
       <div class="note">
         <h5>Website search improvements</h5>
-        <p>During spring break, we made significant changes to the system that powers the SFA website search. We're continuoulsy adjusting this system to improve the quality of search results. If you have any questions or comments, please <a href="mailto:web-dev@sfasu.edu">let us know</a>.</p>
+        <p>During spring break, we made significant changes to the system that powers the SFA website search. We're continuously adjusting this system to improve the quality of search results. If you have any questions or comments, please <a href="mailto:web-dev@sfasu.edu">let us know</a>.</p>
       </div>
     </div>
     <p v-else>
