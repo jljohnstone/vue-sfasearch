@@ -7,7 +7,7 @@
         <li v-for="entry in website.result" class="website-result">
           <div class="result-title">
             <i class="fa fa-file-pdf-o" aria-hidden="true" title="PDF file" v-if="entry.filetype === 'pdf'">&nbsp;</i>
-            <a href="{{ entry.url_link }}">
+            <a href="{{ entry.url_link }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'website-click', '{{ terms }} - {{ entry.url_link }} - {{ $index+1 }}']);">
               {{ entry.content_title || "untitled document"}}
             </a>
             <sup class="filetype" v-if="entry.filetype === 'pdf'">[PDF]</sup>
@@ -20,10 +20,6 @@
           </div>
         </li>
       </ol>
-      <div class="note">
-        <h5>Website search improvements</h5>
-        <p>During spring break, we made significant changes to the system that powers the SFA website search. We're continuously adjusting this system to improve the quality of search results. If you have any questions or comments, please <a href="mailto:web-dev@sfasu.edu">let us know</a>.</p>
-      </div>
     </div>
     <p v-else>
       <strong>There were no relevant webpages found.</strong>
@@ -83,7 +79,7 @@
     @include media($medium-up) {
       @include span-columns(8 of 12);
     }
-    background-color: $gray;
+    background-color: #f5f5f5;
     padding:0.5rem;
     margin-bottom:1rem;
     font-weight:bold;
@@ -107,21 +103,6 @@
       @include media($medium-up) {
         @include span-columns(8 of 12)
       }
-    }
-    .result-title {
-      font-size:1.2rem;
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-    .result-body {
-      color:#333;
-      margin-top: 0.5rem;
-    }
-    .result-url {
-      color: green;
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
     }
     .filetype {
       color: #777;

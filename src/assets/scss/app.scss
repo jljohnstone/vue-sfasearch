@@ -52,6 +52,22 @@ h2 {
   margin-bottom:0.5em;
 }
 
+.result-title {
+  font-size:1.2rem;
+  a {
+    text-decoration: underline;
+  }
+}
+.result-body {
+  color:#333;
+  margin-top: 0.5rem;
+}
+.result-url {
+  color: green;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
 // == breakpoints
 
 $medium-up: rem(480);
@@ -72,11 +88,9 @@ $slick-button-radius: 5;
   background:$purple;
   height:100%;
   width:rem(30);
-  // opacity: 0.4;
   z-index:10;
   &:hover {
     background:$black;
-    // opacity: 0.5;
   }
   &.slick-next {
     padding-right:rem(10);

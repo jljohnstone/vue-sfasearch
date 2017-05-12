@@ -1,11 +1,11 @@
 <template>
-  <div class="calendar-results">
+  <div class="calendar-results" v-if="count">
     <h2>Event Results</h2>
-    <div class="events" v-if="count">
+    <div class="events">
       <div v-for="event in calendar.hits.hits" class="sfa-event">
         <ul>
           <li class="name">
-            <a href="{{ event._source.link | fixEventLink }}">
+            <a href="{{ event._source.link | fixEventLink }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'calendar-click', '{{ terms }} - {{ event._source.title }} ({{ event._source.date | toDate }}) - {{ $index+1 }}']);">
               <span v-if="event.highlight.title">{{{ event.highlight.title }}}</span>
               <span v-else>{{{ event._source.title }}}</span>
             </a>
@@ -16,9 +16,6 @@
         </ul>
       </div>
     </div>
-    <p v-else>
-      <strong>There were no matching events found.</strong>
-    </p>
   </div>
 </template>
 

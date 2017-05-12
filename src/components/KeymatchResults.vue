@@ -1,9 +1,18 @@
 <template>
   <div class="keymatch-result" v-show="count">
+    <h2>Suggested Result</h2>
     <div class="keymatch-result-item">
-      <div class="keymatch-result-item-button">
-        <a href="{{ keymatch.url }}" class="btn">{{ keymatch.title }}</a>
-      </div>
+      <a href="{{ keymatch.url }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'keymatch-click', '{{ terms }} - {{ keymatch.url }}']);">
+        <img src="~assets/logo-small.png">
+        <div class="result-text">
+          <div class="result-title">
+            {{ keymatch.title }}
+          </div>
+          <div class="result-url">
+            {{ keymatch.url }}
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </template>
@@ -56,15 +65,16 @@
   }
   .keymatch-result-item {
     @include row();
-    margin-top:rem(40)
-  }
-  .keymatch-result-item-button {
-    @include span-columns(12);
-    @include media($medium-up) {
-      @include span-columns(8 of 12)
+    margin-top:rem(20);
+    .result-text {
+      padding-top:3px;
+      .result-title {
+        text-decoration:underline;
+      }
     }
-    .btn {
-      color:#333;
+    img {
+      float:left;
+      margin-right:1rem;
     }
   }
 </style>

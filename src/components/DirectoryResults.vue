@@ -1,14 +1,14 @@
 <template>
-  <div class="directory-results">
+  <div class="directory-results" v-if="count">
     <h2>People Results</h2>
-    <div class="people" v-if="count">
+    <div class="people">
       <div v-for="person in directory.hits.hits" class="sfa-person">
         <div class="photo">
-          <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}"><img :src="person._source.image" :alt="person._source.fullname"></a>
+          <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'directory-profile-click', '{{ terms }} - {{ person._source.fullname }} - {{ $index+1 }}']);"><img :src="person._source.image" :alt="person._source.fullname"></a>
         </div>
         <ul class="details">
           <li class="name">
-            <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}">
+            <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'directory-profile-click', '{{ terms }} - {{ person._source.fullname }} - {{ $index+1 }}']);">
               {{ person._source.fullname }}
             </a>
           </li>
@@ -16,7 +16,7 @@
             {{ person._source.role }}, {{ person._source.department }}
           </li>
           <li>
-            <a href="mailto:{{ person._source.email }}">{{ person._source.email }}</a>
+            <a href="mailto:{{ person._source.email }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'directory-email-click', '{{ terms }} - {{ person._source.fullname }} - {{ person._source.email }} - {{ $index+1 }}']);">{{ person._source.email }}</a>
           </li>
           <li>
             {{ person._source.phone }}
@@ -24,9 +24,6 @@
         </ul>
       </div>
     </div>
-    <p v-else>
-      <strong>There were no matching people found.</strong>
-    </p>
   </div>
 </template>
 
