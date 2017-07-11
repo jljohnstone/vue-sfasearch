@@ -22,7 +22,8 @@
       </ol>
     </div>
     <p v-else>
-      <strong>There were no relevant webpages found.</strong>
+      <strong v-if="status === 'fail'">Website search is currently offline while a system upgrade is being performed.</strong>
+      <strong v-else>There were no relevant webpages found.</strong>
     </p>
   </div>
 </template>
@@ -33,7 +34,8 @@
       return {
         website: '',
         count: 0,
-        include_docs: false
+        include_docs: false,
+        status: ''
       }
     },
     props: ['terms'],
@@ -53,8 +55,10 @@
           this.$set('website', response.json().response)
           this.$dispatch('searchComplete', 'website')
           this.$set('count', this.website.record_count)
+          this.$set('status', 'success')
         }, (response) => {
           console.error('error fetching website results JSON')
+          this.$set('status', 'fail')
         })
       },
       toggleDocs () {
