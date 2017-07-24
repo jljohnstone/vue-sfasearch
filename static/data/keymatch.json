@@ -259,6 +259,11 @@
       "term": "testing",
       "title": "Testing Services",
       "url": "http://www.sfasu.edu/ccs/testing/"
+    },
+    {
+      "term": "mysfa",
+      "title": "mySFA",
+      "url": "http://www.sfasu.edu/mysfa/"
     }
   ]
 }
