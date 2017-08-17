@@ -161,6 +161,16 @@
       "url": "http://sfasu.campusdish.com/"
     },
     {
+      "term": "food service",
+      "title": "Aramark - SFA Dining",
+      "url": "http://sfasu.campusdish.com/"
+    },
+    {
+      "term": "cafeteria",
+      "title": "Aramark - SFA Dining",
+      "url": "http://sfasu.campusdish.com/"
+    },
+    {
       "term": "aarc",
       "title": "AARC",
       "url": "https://library.sfasu.edu/aarc/"
@@ -259,6 +269,26 @@
       "term": "testing",
       "title": "Testing Services",
       "url": "http://www.sfasu.edu/ccs/testing/"
+    },
+    {
+      "term": "bookstore",
+      "title": "Bookstore",
+      "url": "http://sfasu.bncollege.com"
+    },
+    {
+      "term": "campus bookstore",
+      "title": "Bookstore",
+      "url": "http://sfasu.bncollege.com"
+    },
+    {
+      "term": "barnes and noble",
+      "title": "Bookstore",
+      "url": "http://sfasu.bncollege.com"
+    },
+    {
+      "term": "barnes & noble",
+      "title": "Bookstore",
+      "url": "http://sfasu.bncollege.com"
     }
   ]
 }
