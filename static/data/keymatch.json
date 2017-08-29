@@ -294,6 +294,11 @@
       "term": "barnes & noble",
       "title": "Bookstore",
       "url": "http://sfasu.bncollege.com"
+    },
+    {
+      "term": "convocation",
+      "title": "Academic Convocation",
+      "url": "http://www.sfasu.edu/convocation/convocation.pdf"
     }
   ]
 }
