@@ -314,6 +314,21 @@
       "term": "hurricane",
       "title": "Hurrican Harvey Information",
       "url": "http://www.sfasu.edu/harvey"
+    },
+    {
+      "term": "gala",
+      "title": "Gala",
+      "url": "http://givetosfa.sfasu.edu/give.php?id=36"
+    },
+    {
+      "term": "development",
+      "title": "Office of Development",
+      "url": "http://givetosfa.sfasu.edu/"
+    },
+    {
+      "term": "advancement",
+      "title": "University Advancement",
+      "url": "http://givetosfa.sfasu.edu/"
     }
   ]
 }
