@@ -36,7 +36,7 @@
       fetchSearchResults () {
         var searchURI = 'static/data/keymatch.json'
         this.$http.get(searchURI).then((response) => {
-          var allTerms = response.data.keymatches
+          var allTerms = response.body.keymatches
           for (var i = 0; i < allTerms.length; i++) {
             var thisTerm = allTerms[i]
             if (thisTerm.term.toLowerCase() === this.terms.toLowerCase()) {

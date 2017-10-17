@@ -52,7 +52,7 @@
           searchURI += '&ex_q=filetype%3Ahtml'
         }
         this.$http.get(searchURI).then((response) => {
-          this.$set('website', response.json().response)
+          this.$set('website', response.body.response)
           this.$dispatch('searchComplete', 'website')
           this.$set('count', this.website.record_count)
           this.$set('status', 'success')

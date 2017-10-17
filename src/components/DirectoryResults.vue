@@ -51,7 +51,7 @@
       fetchSearchResults () {
         var searchURI = 'http://library.sfasu.edu/api/sfa/directory?size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
-          this.$set('directory', response.json())
+          this.$set('directory', response.body)
           this.$dispatch('searchComplete', 'directory')
           this.$set('count', this.directory.hits.total)
           this.initSlick()
