@@ -49,7 +49,7 @@
     },
     methods: {
       fetchSearchResults () {
-        var searchURI = 'http://library.sfasu.edu/api/sfa/directory?size=100&q=' + this.terms
+        var searchURI = '//library.sfasu.edu/api/sfa/directory?size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('directory', response.body)
           this.$dispatch('searchComplete', 'directory')

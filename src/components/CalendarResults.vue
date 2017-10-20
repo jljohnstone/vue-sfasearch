@@ -42,7 +42,7 @@
     },
     methods: {
       fetchSearchResults () {
-        var searchURI = 'http://library.sfasu.edu/api/sfa/events?size=100&q=' + this.terms
+        var searchURI = '//library.sfasu.edu/api/sfa/events?size=100&q=' + this.terms
         this.$http.get(searchURI).then((response) => {
           this.$set('calendar', response.body)
           this.$dispatch('searchComplete', 'calendar')
