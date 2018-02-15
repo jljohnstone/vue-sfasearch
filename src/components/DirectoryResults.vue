@@ -4,7 +4,7 @@
     <div class="people">
       <div v-for="person in directory.hits.hits" class="sfa-person">
         <div class="photo">
-          <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'directory-profile-click', '{{ terms }} - {{ person._source.fullname }} - {{ $index+1 }}']);"><img :src="person._source.image" :alt="person._source.fullname"></a>
+          <a href="https://orion.sfasu.edu/directory/details.aspx?id={{ person._source.id }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'directory-profile-click', '{{ terms }} - {{ person._source.fullname }} - {{ $index+1 }}']);"><img :src="person._source.image" :alt="person._source.fullname" v-show="person._source.image != ''"><img src="https://orion.sfasu.edu/directory/uploads/{{person._source.personId}}.jpg" :alt="person._source.fullname" v-show="person._source.image == ''"></a>
         </div>
         <ul class="details">
           <li class="name">
