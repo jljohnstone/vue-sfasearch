@@ -35,19 +35,27 @@
         website: '',
         count: 0,
         include_docs: false,
+        site_search: '',
         status: ''
       }
     },
-    props: ['terms'],
+    props: ['terms', 'site'],
     events: {
-      runSearch (terms) {
+      runSearch (terms, site) {
         this.terms = terms
+        this.site_search = site
         this.fetchSearchResults()
       }
     },
     methods: {
       fetchSearchResults () {
         var searchURI = 'https://search.sfasu.edu/json?num=100&q=' + this.terms
+        if (this.site_search) {
+          searchURI += '&ex_q=url%3A*www.sfasu.edu%5C%2F' + this.site_search + '%5C%2F*'
+          if (this.site_search === 'policies') {
+            this.$set('include_docs', true)
+          }
+        }
         if (!this.include_docs) {
           searchURI += '&ex_q=filetype%3Ahtml'
         }

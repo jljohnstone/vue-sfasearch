@@ -3,7 +3,7 @@
     <search-form @new-search="performSearch" :terms="terms"></search-form>
     <keymatch-results :terms="terms"></keymatch-results>
     <directory-results :terms="terms"></directory-results>
-    <calendar-results :terms="terms"></calendar-results>
+    <!-- <calendar-results :terms="terms"></calendar-results> -->
     <website-results :terms="terms"></website-results>
   </div>
 </template>
@@ -20,7 +20,8 @@
   export default {
     data () {
       return {
-        terms: null
+        terms: null,
+        site: null
       }
     },
     components: {
@@ -33,6 +34,7 @@
     ready () {
       var qs = queryString.parse(window.location.search)
       this.$set('terms', qs.q)
+      this.$set('site', qs.site)
       console.log(this.terms ? 'initial terms present' : 'no initial terms')
       if (this.terms) {
         this.runInitialSearch()
@@ -40,10 +42,10 @@
     },
     methods: {
       runInitialSearch () {
-        this.performSearch(this.terms)
+        this.performSearch(this.terms, this.site)
       },
-      performSearch (keywords) {
-        this.$broadcast('runSearch', keywords)
+      performSearch (keywords, site) {
+        this.$broadcast('runSearch', keywords, site)
         // TODO: update query string without causing an infinite search loop
         // var parsed = queryString.parse(window.location.search)
         // console.log(parsed)
