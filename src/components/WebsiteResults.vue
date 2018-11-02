@@ -2,6 +2,9 @@
   <div class="website-results">
     <h2>Website Results</h2>
     <div class="website-results-wrapper" v-if="count">
+      <div class="website-results-notice">
+        <p>The SFA search engine is currently undergoing maintenance. Search results may be incomplete.</p>
+      </div>
       <label class="include-documents"><input type="checkbox" v-model="include_docs" v-on:click="toggleDocs"> Include documents <span>(check to include PDFs, Word documents and Excel files in results)</span></label>
       <ol class="website-results-list">
         <li v-for="entry in website.result" class="website-result">
@@ -112,6 +115,16 @@
   .website-results-wrapper {
     @include span-columns(12);
     .website-results-list {
+      @include media($medium-up) {
+        @include span-columns(8 of 12)
+      }
+    }
+    .website-results-notice {
+      background:#5f259f;
+      padding:1em;
+      font-weight: bold;
+      color:#fff;
+      margin-bottom:1em;
       @include media($medium-up) {
         @include span-columns(8 of 12)
       }
