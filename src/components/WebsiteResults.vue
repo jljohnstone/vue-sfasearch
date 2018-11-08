@@ -2,16 +2,16 @@
   <div class="website-results">
     <h2>Website Results</h2>
     <div class="website-results-wrapper" v-if="count">
-      <div class="website-results-notice">
+      <!-- <div class="website-results-notice">
         <p>The SFA search engine is currently undergoing maintenance. Search results may be incomplete.</p>
-      </div>
+      </div> -->
       <label class="include-documents"><input type="checkbox" v-model="include_docs" v-on:click="toggleDocs"> Include documents <span>(check to include PDFs, Word documents and Excel files in results)</span></label>
       <ol class="website-results-list">
         <li v-for="entry in website.result" class="website-result">
           <div class="result-title">
             <i class="fa fa-file-pdf-o" aria-hidden="true" title="PDF file" v-if="entry.filetype === 'pdf'">&nbsp;</i>
             <a href="{{ entry.url_link }}" onclick="_gaq.push(['_trackEvent', 'sfa-search', 'website-click', '{{ terms }} - {{ entry.url_link }} - {{ $index+1 }}']);">
-              {{ entry.content_title || "untitled document"}}
+              {{{ entry.content_title || "untitled document" }}}
             </a>
             <sup class="filetype" v-if="entry.filetype === 'pdf'">[PDF]</sup>
           </div>
