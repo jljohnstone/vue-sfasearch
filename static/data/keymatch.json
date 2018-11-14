@@ -329,6 +329,11 @@
       "term": "advancement",
       "title": "University Advancement",
       "url": "http://givetosfa.sfasu.edu/"
+    },
+    {
+      "term": "directory",
+      "title": "Faculty/Staff Directory",
+      "url": "https://orion.sfasu.edu/directory"
     }
   ]
 }
