@@ -334,6 +334,26 @@
       "term": "directory",
       "title": "Faculty/Staff Directory",
       "url": "https://orion.sfasu.edu/directory"
+    },
+    {
+      "term": "dual credit",
+      "title": "Dual Credit",
+      "url": "http://www.sfasu.edu/admissions-and-aid/admissions-process/dual-credit"
+    },
+    {
+      "term": "strategic plan",
+      "title": "Strategic Plan",
+      "url": "http://www.sfasu.edu/strategicplan"
+    },
+    {
+      "term": "online class",
+      "title": "Online Classes",
+      "url": "https://www.sfaonline.info"
+    },
+    {
+      "term": "distance education",
+      "title": "Distance Education",
+      "url": "https://www.sfaonline.info"
     }
   ]
 }
