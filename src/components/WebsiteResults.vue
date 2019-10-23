@@ -52,7 +52,7 @@
     },
     methods: {
       fetchSearchResults () {
-        var searchURI = 'https://search2.sfasu.edu/json?num=100&q=' + this.terms
+        var searchURI = 'https://search.sfasu.edu/json?num=100&q=' + this.terms
         if (this.site_search) {
           searchURI += '&ex_q=url%3A*www.sfasu.edu%5C%2F' + this.site_search + '%5C%2F*'
           if (this.site_search === 'policies') {
